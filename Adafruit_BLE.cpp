@@ -238,12 +238,13 @@ void Adafruit_BLE::info(void)
   println(F("ATI"));
 
   while ( readline() ) {
+    SerialDebug.println(buffer);
     if ( !strcmp(buffer, "OK") || !strcmp(buffer, "ERROR")  ) break;
     SerialDebug.println(buffer);
   }
 
   // switch back if necessary
-  if ( current_mode == BLUEFRUIT_MODE_DATA ) setMode(BLUEFRUIT_MODE_DATA);
+  if ( current_mode == BLUEFRUIT_MODE_COMMAND ) setMode(BLUEFRUIT_MODE_DATA);
 
   SerialDebug.println(F("----------------"));
 
