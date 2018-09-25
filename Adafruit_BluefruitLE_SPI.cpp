@@ -44,6 +44,9 @@
 
 SPISettings bluefruitSPI(4000000, MSBFIRST, SPI_MODE0);
 
+SPIClass SPI_2(2);
+#define SPI SPI_2
+
 
 /******************************************************************************/
 /*!
